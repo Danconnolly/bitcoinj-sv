@@ -27,20 +27,3 @@ jobs:
 
     - name: Unit tests
       run: ./mvnw -B verify --file pom.xml --fail-at-end -Dmaven.test.redirectTestOutputToFile=true
-
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2.2.0
-      if: ${{ always() && !env.ACT }}
-      with:
-        check_name: Unit Test Results
-        junit_files: '**/target/surefire-reports/TEST-*.xml'
-
-    - name: Upload unit test results
-      uses: actions/upload-artifact@v3
-      if: ${{ failure() && !env.ACT }}
-      with:
-        name: unit-test-reports
-        path: |
-          '**/target/surefire-reports/TEST-*.xml'
-          '**/target/surefire-reports/*-output.txt'
-        retention-days: 5
