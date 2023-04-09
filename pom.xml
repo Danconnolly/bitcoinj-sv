@@ -117,12 +117,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.9</version>
-            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -167,18 +161,16 @@
                     <version>3.2.1</version>
                 </plugin>
                 <plugin>
-                    <!-- for measuring test coverage -->
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>cobertura-maven-plugin</artifactId>
-                    <version>2.7</version>
-                </plugin>
-                <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>2.22.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.9</version>
                 </plugin>
             </plugins>
         </pluginManagement>
